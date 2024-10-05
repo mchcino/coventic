@@ -1,0 +1,334 @@
+/* Gunakan font-face saat ingin di hosting di github, dan atur ulang sesuaikan dengan kode mau bold atau tidak. */
+@font-face {
+  font-family: 'OpenSans-Semibold', sans-serif;
+  src: url(../Fonts/OpenSans-Semibold.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold', sans-serif;
+  src: url(../Fonts/OpenSans-Bold.woff) format('woff');
+}
+
+
+
+/* Gunakan ini saat di VS Code */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+/* Universal */
+html {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+  font-size: 0.875rem;
+}
+
+body {
+  background: url(../Media/background.png);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+/* Navbar */
+.navbar {
+  background: linear-gradient(to bottom, #014a5b, #002841, #00082c);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 50px;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  padding: 10px 10px;
+  z-index: 999;
+}
+
+.navbar .bar-menu, .social-links, .share {
+  width: 100%;
+}
+
+.navbar img {
+  max-width: 100%;
+  margin: 5px 0;
+  transition: 300ms;
+}
+
+.navbar img:hover {
+  transform: translateY(-5px);
+}
+
+
+
+/* Main Content */
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding: 30px 100px;
+}
+
+.container .top-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .top-bar img {
+  width: 112px;
+}
+
+.container .top-bar .login {
+  padding: 0.71428571428em 1.92857142857em;
+  border-radius: 1.875em;
+  border: 2px solid white;
+  transition: 300ms;
+  text-align: center;
+}
+
+.container .top-bar .login:hover {
+  transform: scale(1.07);
+  background: white;
+  color: black;
+}
+
+.container .branding h1 {
+  font-size: 6vmax;
+  line-height: 1em;
+  font-weight: bold;
+  margin: 20px 0 30px 0;
+}
+
+.container .branding .submit-button {
+  padding: 0.71428571428em 1.92857142857em;
+  border-radius: 1.875em;
+  border: 2px solid white;
+  transition: 300ms;
+  text-align: center;
+  display: inline-block;
+}
+
+.container .branding .submit-button:hover {
+  transform: scale(1.07);
+  background: white;
+  color: black;
+}
+
+.bubble {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.bubble img {
+  width: 4vmax;
+  animation: deepWater 7s linear 0.8s infinite;
+  opacity: 0;
+  z-index: -1;
+}
+
+.bubble img:nth-child(1) {
+  width: 2vmax;
+  animation-delay: 10s;
+}
+
+.bubble img:nth-child(2) {
+  width: 3.3vmax;
+  animation-delay: 1.5s;
+}
+
+.bubble img:nth-child(3) {
+  width: 2.65vmax;
+  animation-delay: 4.3s;
+}
+
+.bubble img:nth-child(4) {
+  width: 4.38vmax;
+  animation-delay: 8s;
+}
+
+.bubble img:nth-child(5) {
+  width: 3vmax;
+  animation-delay: 2.3s;
+}
+
+.bubble img:nth-child(6) {
+  width: 1.5vmax;
+  animation-delay: 7s;
+}
+
+.bubble img:nth-child(7) {
+  width: 3.41vmax;
+  animation-delay: 6s;
+}
+
+
+
+@keyframes deepWater {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+
+  100% {
+    transform: translateY(-70vh);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsive Media Query */
+@media (max-width: 374px) {
+  .container {
+    padding: 30px 70px 30px 30px;
+  }
+
+  .container .top-bar img {
+    width: 80px;
+  }
+  
+  .container .top-bar .login {
+    font-size: 12px;
+  }
+}
+
+
+
+@media (min-width: 375px) and (max-width: 500px) {
+  .container {
+    padding: 30px 70px 30px 30px;
+  }
+
+  .container .top-bar .login {
+    font-size: 12px;
+  }
+}
+
+
+
+@media (min-width: 501px) and (max-width: 1000px) {
+  .container {
+    padding: 30px 90px 30px 50px;
+  }
+}
+
+
+
+@media (min-width: 1001px) and (max-width: 1500px) {
+  .navbar {
+    width: 80px;
+  }
+
+  .navbar .bar-menu, .social-links, .share {
+    width: 70%;
+  }
+
+  .navbar img {
+    max-width: 100%;
+    margin: 5px 0;
+    transition: 300ms;
+  }
+
+  .navbar img:hover {
+    transform: translateY(-7px);
+  }
+
+  .container {
+    padding: 30px 130px 30px 100px;
+  }
+}
+
+
+
+@media (min-width: 1501px) {
+  .navbar {
+    width: 5vmax;
+    padding: 1.5%;
+  }
+
+  .navbar .bar-menu, .social-links, .share {
+    width: 3vmax;
+  }
+
+  .navbar img {
+    width: 100%;
+    margin: 10px 0;
+    transition: 300ms;
+  }
+
+  .navbar img:hover {
+    transform: translateY(-7px);
+  }
+
+  .container {
+    padding: 3% 9% 3% 5.22%;
+  }
+
+  .container .top-bar img {
+    width: 8vmax;
+  }
+
+  .container .top-bar .login {
+    font-size: 1vmax;
+  }
+
+  .container .branding p {
+    font-size: 1vmax;
+  }
+
+  .container .branding .submit-button {
+    font-size: 1vmax;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
